@@ -1,9 +1,27 @@
 import React from 'react'
+import styled from "styled-components";
 
 export default function Header() {
   return (
-    <div
-    style={{width:"100%", height:"7vh", backgroundColor:"red", display:"flex", alignItems:"center", justifyContent:"center"}}
-    >header</div>
+    <HeaderDetails
+
+    >
+        <RenderImage>Render Image</RenderImage>
+         </HeaderDetails>
   )
 }
+
+const HeaderDetails = styled.div`
+  width: 100%;
+  height: 7vh;
+  background-color:lightgray;
+  display:flex;
+  align-items:center;
+border:1px solid gray;
+  justify-content:center;
+
+`;
+const RenderImage = styled.p`
+font-size:22px;
+font-weight:700;
+`;

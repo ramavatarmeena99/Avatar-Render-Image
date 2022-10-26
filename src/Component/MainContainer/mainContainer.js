@@ -51,8 +51,8 @@ export default function MainContainer() {
         })}
       </Container>
       <div>
-        <button onClick={onBack}>BACK</button>
-        <button onClick={onNext}>NEXT</button>
+        <Button onClick={onBack}>BACK</Button>
+        <Button onClick={onNext}>NEXT</Button>
       </div>
     </>
   );
@@ -82,4 +82,12 @@ const Img = styled.img`
   height: 100%;
   margin: 5px;
   border-radius: 10px;
+`;
+
+const Button = styled.button`
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor:pointer
 `;
