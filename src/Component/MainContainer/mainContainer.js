@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from "react";
 // import { Image } from '../../ImageData';
 import { API_KEY } from "../../key";
+import styled from "styled-components";
+
 export default function MainContainer() {
   const [selectImage, setSelectImage] = useState([]);
 
-  const [allImage, setallImage] = useState([])
+  const [allImage, setallImage] = useState([]);
   let onBack = () => {
-    if(selectImage.length >1){
-        let a = selectImage?.splice(0, selectImage.length - 1);
+    if (selectImage.length > 1) {
+      let a = selectImage?.splice(0, selectImage.length - 1);
 
-        console.log(a, "ss");
-        setSelectImage(a);
+      console.log(a, "ss");
+      setSelectImage(a);
     }
-   
   };
   let onNext = () => {
     setSelectImage([...selectImage, allImage[selectImage.length + 1]]);
-
   };
 
-
-  const getPhotos = async (type) => {
+  const getPhotos = async () => {
     let url = `https://api.pexels.com/v1/curated?per_page=100`;
-
-
 
     await fetch(url, {
       headers: {
@@ -34,8 +31,8 @@ export default function MainContainer() {
         return res.json();
       })
       .then((res) => {
-setallImage(res.photos)
-setSelectImage([res.photos[0]])
+        setallImage(res.photos);
+        setSelectImage([res.photos[0]]);
       });
   };
 
@@ -44,38 +41,45 @@ setSelectImage([res.photos[0]])
   }, []);
   return (
     <>
-      <div
-      // style={{
-      //   width: "100%",
-      //   height: "auto",
-      //   display: "flex",
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      // }}
-      >
+      <Container>
         {selectImage?.map((item, index) => {
           return (
-            <div
-              key={index}
-              style={{
-                width: "20%",
-                height: "auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img width={810} height={400} src={item?.src.medium} alt="all set"></img>
-            </div>
+            <Div key={index}>
+              <Img src={item?.src.medium} alt="all set"></Img>
+            </Div>
           );
         })}
-      </div>
+      </Container>
       <div>
-      <button  onClick= {onBack}>
-          BACK
-        </button>
+        <button onClick={onBack}>BACK</button>
         <button onClick={onNext}>NEXT</button>
       </div>
     </>
   );
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+`;
+
+const Div = styled.div`
+  max-width: 20%;
+  flex-basis: 100px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+`;
+
+const Img = styled.img`
+  width: 200px;
+  height: 100%;
+  margin: 5px;
+  border-radius: 10px;
+`;
