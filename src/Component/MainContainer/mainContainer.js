@@ -50,7 +50,9 @@ export default function MainContainer() {
           );
         })}
       </Container>
-      <div>
+      <div
+      style={{width:"100%", height:"7vh", position:"fixed", bottom:"0px", left:"0px"}}
+      >
         <Button onClick={onBack}>BACK</Button>
         <Button onClick={onNext}>NEXT</Button>
       </div>
@@ -89,5 +91,6 @@ const Button = styled.button`
   height: 30px;
   margin: 5px;
   border-radius: 10px;
-  cursor:pointer
+  cursor:pointer;
+  border:1px solid green;
 `;
