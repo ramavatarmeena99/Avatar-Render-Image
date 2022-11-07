@@ -4,21 +4,17 @@
 
 
 ## Features
-* Video Listing & Single Video Page
-* Playlist Management
-* Filters with Categories
-* Like/Dislike, Watch Later & History
+* Add new image conditionally
+* Remove last render image 
 
 ## Technology Stack Used In This Project
 * ReactJs
-* Redux
-* React Router
 * JavaScript
 * Styled Components
 * HTML/CSS
 
 ## Project Live
-### [Click here](https://avatar-tv.netlify.app/) 
+### [Click here](https://avatarrenderimage.netlify.app/) 
 
 ## Run This Project on Your Local Machine
 
@@ -28,7 +24,7 @@
     ```
 2. Change the directory 
     ```
-    cd avatar-tv
+    cd avatar-render-image
     ```
 3. Install
     ```
@@ -79,7 +75,7 @@
     * If you think that something is missing from the readme file. You can introduce new sections for the readme file or can improve the existing one. 
 
 
-[Click here](https://github.com/ramavatarmeena99/Avatar-TV) to Contribute 
+[Click here](https://github.com/ramavatarmeena99/Avatar-Render-Image) to Contribute 
 
 
 
