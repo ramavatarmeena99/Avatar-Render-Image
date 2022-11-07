@@ -17,6 +17,9 @@ export default function MainContainer() {
   };
   let onNext = () => {
     setSelectImage([...selectImage, allImage[selectImage.length + 1]]);
+    let newArr = [...selected, { key: txt?.toString(), category }];
+
+    localStorage.setItem("myItems", JSON.stringify(newArr));
   };
 
   const getPhotos = async () => {
